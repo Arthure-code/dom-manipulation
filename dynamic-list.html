@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A list built from a text field: add an item with a button, remove one by its number.">
+  <title>Dynamic list - DOM Manipulation</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.min.css">
+  <script defer src="js/dynamic-list.js"></script>
+</head>
+<body class="d-flex flex-column min-vh-100">
+  <header>
+    <nav class="navbar navbar-expand-sm navbar-light bg-white border-bottom shadow-sm mb-3" aria-label="Site">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">DOM Manipulation</a>
+        <ul class="navbar-nav"><li class="nav-item"><a class="nav-link text-dark" href="index.html">Rewriting a page</a></li><li class="nav-item"><a class="nav-link text-dark" href="for-of.html">for...of</a></li><li class="nav-item"><a class="nav-link active" href="dynamic-list.html" aria-current="page">Dynamic list</a></li></ul>
+      </div>
+    </nav>
+  </header>
+  <main class="container flex-grow-1 pb-5">
+    <div class="text-center">
+      <h1 class="display-4">Dynamic list</h1>
+      <p>Type something and add it; give a number and remove that item. The list is nothing but what you put in it.</p>
+    </div>
+    <div class="row justify-content-center mt-2">
+      <div class="col-12 col-md-8 col-lg-6">
+        <section class="card">
+          <div class="card-body">
+            <form id="list-form">
+              <div class="mb-3">
+                <label for="new-item" class="form-label">Text of the item to add</label>
+                <div class="input-group">
+                  <input type="text" class="form-control" id="new-item" autocomplete="off">
+                  <button type="submit" class="btn btn-primary" id="add">Add the item to the list</button>
+                </div>
+              </div>
+              <div class="mb-3">
+                <label for="item-number" class="form-label">Number of the item to remove</label>
+                <div class="input-group">
+                  <input type="number" class="form-control" id="item-number" min="1" autocomplete="off">
+                  <button type="button" class="btn btn-outline-secondary" id="remove">Remove the item from the list</button>
+                </div>
+              </div>
+              <p class="text-danger mb-0" id="message" aria-live="polite"></p>
+            </form>
+          </div>
+        </section>
+        <h2 class="h5 mt-4">The list</h2>
+        <ol id="dynamic-list" class="list-group list-group-numbered"></ol>
+      </div>
+    </div>
+  </main>
+  <footer class="border-top py-3 text-muted">
+    <div class="container">
+      &copy; 2026 - DOM Manipulation - <a href="LICENSE">Licence</a>
+    </div>
+  </footer>
+</body>
+</html>
